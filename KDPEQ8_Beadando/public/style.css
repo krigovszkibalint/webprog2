@@ -1,0 +1,133 @@
+body {
+	background-image: url("img/main-background.png");
+	background-repeat: no-repeat;
+	max-width: 1920px;
+	max-height: 1080px;
+}
+header {
+	width: 100%;
+	height: 50px;
+}
+footer {  
+	margin-top: 40vh;
+	padding-left: 25px;
+	padding-right: 25px;
+	color: rgba(255,255,255,0.75);
+} 
+footer a{
+	color: rgba(255,255,255,0.75);
+	transition: 0.5s ease;
+}
+footer a:hover{
+	text-shadow: 0px 0px 3px white;
+	color: rgba(255,255,255);
+	text-decoration: none;
+}
+content h1{
+	color: rgba(255,255,255,0.9);
+	font-size: 96px;
+	font-family: 'Josefin Sans', sans-serif;
+	margin-top: 40vh;
+}
+#footer-elements{
+padding-right: 25px;
+padding-left: 25px;
+margin-bottom: 25px;
+font-family: 'Oxygen', sans-serif;
+
+}
+#footer-elements-left{
+	float: left;
+	font-size: 32px;
+}
+#footer-elements-right{
+	margin-left: 50px;
+	border-bottom: 1px solid rgba(255,255,255,0.75);
+	float: right;
+	width:200px;
+	font-size: 24px;
+	transition: 0.5s ease;
+}
+#footer-elements-right:hover{
+	border-bottom: 1px solid white;
+}
+#register form{
+	margin-top: 16vh !important;
+	margin-bottom: -22vh !important;
+	margin: auto;
+	padding-top: 15px;
+	background-color: white;
+	width:25%;
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+	font-family: 'Oxygen', sans-serif;
+}
+#login form{
+	margin-top: 25vh !important;
+	margin-bottom: -13vh !important;
+	margin: auto;
+	padding-top: 15px;
+	background-color: white;
+	width:25%;
+	border-radius: 30px;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+	font-family: 'Oxygen', sans-serif;
+}
+#register form label
+{
+	font-weight: bold;
+	margin-left: 15%;
+	display: block;
+	float: left;
+	font-size: 16px;
+}
+#login form label
+{
+	font-weight: bold;
+	margin-left: 15%;
+	display: block;
+	float: left;
+	font-size: 16px;
+}
+#register h2{
+	font-weight: bold;
+	font-size: 24pt;
+	margin-bottom: 10%;
+}
+#login h2{
+	font-weight: bold;
+	font-size: 24pt;
+	margin-bottom: 10%;
+}
+.input-style{
+	margin-left: 15%;
+	font-size: 20px;
+	outline: 0 !important;
+ 	border-width: 0 0 2px !important;
+ 	border-color: rgb(46, 46, 46);
+	margin-top: 10px;
+	width:70%;
+	-webkit-appearance:none;
+	background-color: white !important;
+}
+.register-btn{
+	border-radius: 15px;
+	padding: 5px;
+	color: white;
+	font-size: 20px;
+ 	background: rgb(46, 46, 46);
+	margin-top: 15px;
+	margin-bottom: 30px;
+	width:40%;
+	border: 0;
+	-webkit-appearance: none;
+    transition: 0.5s ease;
+}
+.register-btn:hover
+{
+	background: rgb(80, 80, 80);
+}
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
