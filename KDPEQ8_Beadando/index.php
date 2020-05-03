@@ -18,12 +18,14 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<!-- <header><?php include_once PROTECTED_DIR.'header.php'; ?> -->
 			<!-- <nav><?php require_once PROTECTED_DIR.'nav.php'; ?></nav> -->
-		<!-- </header> -->
 		
 		<content><?php require_once PROTECTED_DIR.'routing.php'; ?></content>
+		<?php if($_GET['P'] != 'profile') : ?>
 		<footer><?php include_once PROTECTED_DIR.'footer.php'; ?></footer>
+		<?php else : ?>
+			<header><?php include_once PROTECTED_DIR.'header.php'; ?></header>
+		<?php endif; ?>
 	</div>
 </body>
 </html>
