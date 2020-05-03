@@ -1,1 +1,1 @@
-404-es hiba :c
+<h1><center>Error 404 :c</center></h1>

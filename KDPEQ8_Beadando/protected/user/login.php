@@ -21,16 +21,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
   <center><h2>Bejelentkezés</h2></center>
 
   <div class="form-group">
-    <label for="loginEmail">Email address</label>
+    <label for="loginEmail">E-mail cím</label>
     <input type="email" class="input-style" id="loginEmail" aria-describedby="emailHelp" name="email" value=
                 "<?= isset($postData) ? $postData['email'] : '';?>">
   </div>
   
   <div class="form-group">
-    <label for="loginPassword">Password</label>
+    <label for="loginPassword">Jelszó</label>
     <input type="password" class="input-style" id="loginPassword" name="password" value="">
   </div>
 
-  <center><button type="submit" class="register-btn" name="login">Login</button></center>
+  <center><button type="submit" class="register-btn" name="login">Bejelentkezés</button></center>
 </form>
 </div>
