@@ -1,11 +1,15 @@
-	<div id="header-elements">
-		<div id="header-elements-left">
-			<a href="index.php"><span class="glyphicon glyphicon-home"></span></a>
-		</div>
-	</div>
-<?php if(!IsUserLoggedIn()) : ?>
-	<div id="header-elements">
-		<div id="header-elements-right">
+<header> 
+	<div id="header-elements"> 
+		<div id="header-elements-left"> 
+			<a href="index.php"><span class="glyphicon glyphicon-home"></span></a> 
+		</div> 
+		<div id="header-elements-left"> 
+			<a href="index.php"><span class="glyphicon glyphicon-cog"></span></a> 
+		</div> 
+	</div> 
+<?php if(!IsUserLoggedIn()) : ?> 
+	<div id="header-elements"> 
+		<div id="header-elements-right"> 
 			<a href="index.php?P=login">Bejelentkezés</a>
 		</div>
 		<div id="header-elements-right">
@@ -31,6 +35,4 @@
 	<?php else : ?>
 	<?php endif; ?>
 <?php endif; ?>
-<?php
-if ($_GET['P'] = 'profile') echo "<body class='profile'>";
-else echo "<body>"; ?>
+</header>

@@ -1,1 +1,0 @@
-<h2><center>Üdvözöljük, <?php echo $u ?></center></h2>
