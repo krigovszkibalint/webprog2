@@ -1,1 +1,1 @@
-<h1><center>Error 404 :c</center></h1>
+<h1><center>Error 404 :/</center></h1>

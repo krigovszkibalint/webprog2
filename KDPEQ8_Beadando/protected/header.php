@@ -4,7 +4,10 @@
 			<a href="index.php"><span class="glyphicon glyphicon-home"></span></a> 
 		</div> 
 		<div id="header-elements-left"> 
-			<a href="index.php"><span class="glyphicon glyphicon-cog"></span></a> 
+			<a href="index.php?P=settings"><span class="glyphicon glyphicon-cog"></span></a> 
+		</div>
+		<div id="header-elements-left"> 
+			<a href="index.php?P=new_post"><span class="glyphicon glyphicon-plus"></span></a> 
 		</div> 
 	</div> 
 <?php if(!IsUserLoggedIn()) : ?> 
@@ -29,7 +32,7 @@
 				<a href="index.php?P=profile">Profil</a>
 			</div>
 			<div id="header-elements-right">
-				<a href="index.php?P=list_worker">Felfedezés</a>
+				<a href="index.php?P=explore">Felfedezés</a>
 			</div>
 		</div>
 	<?php else : ?>

@@ -3,6 +3,13 @@ function IsUserLoggedIn() {
 	return $_SESSION  != null && array_key_exists('uid', $_SESSION) && is_numeric($_SESSION['uid']);
 }
 
+// function IsUserBanned() {
+// 	if ($_SESSION['permission'] < 1)
+// 	{
+// 		header('Location: index.php?P=banned');
+// 	}
+// }
+
 function UserLogout() {
 	session_unset();
 	session_destroy();
@@ -10,7 +17,7 @@ function UserLogout() {
 }
 
 function UserLogin($email, $password) {
-	$query = "SELECT id, username, email, permission FROM users WHERE email = :email AND password = :password";
+	$query = "SELECT id, username, email, bio, permission FROM users WHERE email = :email AND password = :password";
 	$params = [
 		':email' => $email,
 		':password' => sha1($password)
@@ -22,6 +29,7 @@ function UserLogin($email, $password) {
 		$_SESSION['uid'] = $record['id'];
 		$_SESSION['uname'] = $record['username'];
 		$_SESSION['email'] = $record['email'];
+		$_SESSION['bio'] = $record['bio'];
 		$_SESSION['permission'] = $record['permission'];
 		header('Location: index.php');
 	}

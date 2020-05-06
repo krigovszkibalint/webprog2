@@ -9,6 +9,11 @@ body.profile{
 	max-width: 1920px;
 	max-height: 1080px;
 }
+body.settings{
+	background-image: url("img/profile.png");
+	max-width: 1920px;
+	max-height: 1080px;
+}
 header {
 	margin-top: 0vh;
 	padding-left: 25px;
@@ -239,11 +244,61 @@ font-family: 'Oxygen', sans-serif;
 	margin-bottom: 20px; 
  
  	grid-area: profile-cover-userbio; 
- } 
+}
+.profile-settings { 
+	padding-top: 15px; 
+	padding-bottom: 15px; 
+	-webkit-box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
+	-moz-box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
+	box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
+	margin-top: 75px; 
+/*	background-image: url("img/profile-cover.jpg"); 
+	background-repeat: no-repeat; 
+	background-position: center; */
+} 
 .grid-container { 
   	display: grid; 
   	grid-template-columns: 1fr 1fr 1fr 1fr; 
   	grid-template-rows: 1fr 1fr 1fr; 
   	gap: 0px 0px; 
   	grid-template-areas: "profile-cover-content-img profile-cover-user-container . ." ". . . ." ". . . ."; 
+}
+.profile-content {
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.profile-content-title {
+	padding: 0px;
+	margin:0px;
+	border-bottom: 1.5px solid rgba(0,0,0,0.75);
+	width:220px;
+	font-size: 24px;
+	font-family: 'Oxygen', sans-serif; 
+}
+.profile-content h2 {
+	color: rgba(0,0,0,0.75);
+	margin-bottom: 5px;
+}
+#photos {
+	margin-top: 25px;
+  /* Prevent vertical gaps */
+   
+
+  -webkit-column-count: 3;
+  -webkit-column-gap:   50px;
+  -moz-column-count:    3;
+  -moz-column-gap:      50px;
+  column-count:         3;
+  column-gap:           50px;  
+}
+
+#photos img {
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+	border-radius: 3px;
+	margin-bottom: 50px;
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
 }
