@@ -14,6 +14,10 @@ switch ($_GET['P']) {
 	echo "<content>"; include PROTECTED_DIR.'user/profile_settings.php'; echo "</content>"; 
 	echo "<body class='settings'>"; break; 
 
+	case 'new_post': IsUserLoggedIn() ? include PROTECTED_DIR.'header.php' : header('Location: index.php'); 
+	echo "<content>"; include PROTECTED_DIR.'user/new_post.php'; echo "</content>"; 
+	echo "<body class='new_post'>"; break; 
+
 	case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php');
 	echo "<footer>"; include PROTECTED_DIR.'footer.php'; echo "</footer>"; break;
 

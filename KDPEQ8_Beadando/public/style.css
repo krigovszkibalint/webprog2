@@ -9,7 +9,18 @@ body.profile{
 	max-width: 1920px;
 	max-height: 1080px;
 }
+.profile::-webkit-scrollbar{
+	display:none;
+}
+.settings::-webkit-scrollbar{
+	display:none;
+}
 body.settings{
+	background-image: url("img/profile.png");
+	max-width: 1920px;
+	max-height: 1080px;
+}
+body.new_post{
 	background-image: url("img/profile.png");
 	max-width: 1920px;
 	max-height: 1080px;
@@ -154,6 +165,19 @@ font-family: 'Oxygen', sans-serif;
 	-webkit-appearance:none;
 	background-color: white !important;
 }
+.input-file{
+	/*margin-left: 15%;*/
+	padding-left: 25%;
+	padding-right: 25%;
+	font-size: 20px;
+	outline: 0 !important;
+ 	border-width: 0 0 2px !important;
+ 	border-color: rgb(46, 46, 46);
+	margin-top: 10px;
+	width:100%;
+	-webkit-appearance:none;
+	background-color: white !important;
+}
 .register-btn{
 	border-radius: 15px;
 	padding: 5px;
@@ -169,7 +193,7 @@ font-family: 'Oxygen', sans-serif;
 }
 .register-btn:hover
 {
-	background: rgb(80, 80, 80);
+	background: rgb(0, 0, 0);
 }
 .container-fluid {
 	padding-left: 0px;
@@ -182,7 +206,7 @@ font-family: 'Oxygen', sans-serif;
 	-moz-box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	margin-top: 75px; 
-	background-image: url("img/profile-cover.jpg"); 
+	/*background-image: url("img/default-cover.jpg"); */
 	background-repeat: no-repeat; 
 	background-position: center; 
 	width: 100%; 
@@ -245,17 +269,112 @@ font-family: 'Oxygen', sans-serif;
  
  	grid-area: profile-cover-userbio; 
 }
+.upload-btn{
+	border-radius: 25px;
+	padding: 5px;
+	color: white;
+	font-size: 20px;
+ 	background: rgb(46, 46, 46);
+	margin-top: 15px;
+	margin-bottom: 30px;
+	width:30%;
+	border: 0;
+	-webkit-appearance: none;
+    transition: 0.5s ease;
+}
+.upload-btn:hover
+{
+	background: rgb(0, 0, 0);
+}
+.bio-btn{
+	border-radius: 25px;
+	padding: 5px;
+	color: white;
+	font-size: 20px;
+ 	background: rgb(46, 46, 46);
+	margin-top: 15px;
+	margin-bottom: 30px;
+	width:40%;
+	border: 0;
+	-webkit-appearance: none;
+    transition: 0.5s ease;
+}
+.bio-btn:hover
+{
+	background: rgb(0, 0, 0);
+}
 .profile-settings { 
-	padding-top: 15px; 
-	padding-bottom: 15px; 
+	padding-top: 25px; 
+	padding-bottom: 25px; 
+	padding-left: 50px;
+	padding-right: 50px;
 	-webkit-box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	-moz-box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	margin-top: 75px; 
-/*	background-image: url("img/profile-cover.jpg"); 
-	background-repeat: no-repeat; 
-	background-position: center; */
+}
+.profile-settings-content {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.profile-settings-content form { 
+	padding-left: 30%;
+	padding-right: 30%;
+	margin-top: 75px; 
 } 
+.form-profil img {
+	width: 250px; 
+	height: 250px; 
+	border-radius: 250px;
+}
+.form-cover img {
+	width: 480px; 
+	height: 270px; 
+	border-radius: 10px;
+}
+.profile-settings-form-title {
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1.5px solid rgba(0,0,0,0.75);
+	font-size: 24px;
+	font-family: 'Oxygen', sans-serif; 
+	width: 300px;
+}
+.profile-settings-content form input[type=file] {
+	padding-top: 25px;
+	padding-bottom: 0px;
+}
+.profile-settings-content p {
+	font-family: 'Oxygen', sans-serif; 
+	font-size: 28px;
+	margin-bottom: 25px;
+} 
+.profile-settings-content form label{ 
+	font-weight: bold;
+	margin-left: 15%;
+	display: block;
+	float: left;
+	font-size: 16px;
+} 
+
+.profile-settings .profile-content-title {
+	padding: 0px;
+	margin:0px;
+	border-bottom: 1.5px solid rgba(0,0,0,0.75);
+	width:320px;
+	font-size: 24px;
+	font-family: 'Oxygen', sans-serif; 
+}
+.profile-settings textarea {
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: 20px;
+	padding: 5px;
+	width: 400px;
+	height: 200px;
+	resize: none;
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.75);
+}
 .grid-container { 
   	display: grid; 
   	grid-template-columns: 1fr 1fr 1fr 1fr; 
@@ -272,6 +391,7 @@ font-family: 'Oxygen', sans-serif;
 .profile-content-title {
 	padding: 0px;
 	margin:0px;
+	margin-bottom: 25px;
 	border-bottom: 1.5px solid rgba(0,0,0,0.75);
 	width:220px;
 	font-size: 24px;
@@ -293,7 +413,6 @@ font-family: 'Oxygen', sans-serif;
   column-count:         3;
   column-gap:           50px;  
 }
-
 #photos img {
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
 	border-radius: 3px;

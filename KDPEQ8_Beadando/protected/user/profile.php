@@ -1,21 +1,27 @@
+<?php
+	$query = "SELECT id, username, email, bio FROM users WHERE id = ".$_SESSION['uid']; 
 
-<div class="profile-cover"> 
+	require_once DATABASE_CONTROLLER; 
+	$user = getRecord($query); 
+?>
+
+<div class="profile-cover" style="background-image: url(<?=PUBLIC_DIR."img/default-cover.png"?>)"> 
 	<div class="profile-cover-content"> 
 		<div class="grid-container"> 
 		  <div class="profile-cover-user-container"> 
 		    <div class="profile-cover-user"> 
-		    	<h2><?=$_SESSION['uname']?></h2> 
+		    	<h2><?=$user['username']?></h2> 
 		    </div> 
 		    <div class="profile-cover-userbio"> 
 		    	<p> 
 			    	<justify> 
-			    	<?=$_SESSION['bio']?>
-			    	</justify> 
+			    	<?=$user['bio']?>
+			    	</justify>
 		    	</p> 
 		    </div> 
 		  </div> 
 		  <div class="profile-cover-content-img"> 
-		  	<img src="<?= PUBLIC_DIR."img/profile-img.png" ?>"> 
+		  	<img src="<?= PUBLIC_DIR."img/default-profile.png" ?>"> 
 		  </div> 
 		</div> 
 	</div> 

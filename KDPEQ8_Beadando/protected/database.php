@@ -38,6 +38,7 @@ function executeUpdate($query, $params){
 	$connection = getConnection();
 	$statement = $connection->prepare($query);
 	$statement->execute($params);
+	$connection = null;
 }
 
 function getField($queryString, $queryParams = []) {
