@@ -178,6 +178,11 @@ font-family: 'Oxygen', sans-serif;
 	-webkit-appearance:none;
 	background-color: white !important;
 }
+.new-post-content .input-file{
+	/*margin-left: 15%;*/
+	padding-left: 35%;
+	padding-right: 35%;
+}
 .register-btn{
 	border-radius: 15px;
 	padding: 5px;
@@ -207,6 +212,7 @@ font-family: 'Oxygen', sans-serif;
 	box-shadow: inset 0px 15px 20px -10px rgba(0,0,0,0.5); 
 	margin-top: 75px; 
 	/*background-image: url("img/default-cover.jpg"); */
+	background-size: cover;
 	background-repeat: no-repeat; 
 	background-position: center; 
 	width: 100%; 
@@ -293,7 +299,7 @@ font-family: 'Oxygen', sans-serif;
 	font-size: 20px;
  	background: rgb(46, 46, 46);
 	margin-top: 15px;
-	margin-bottom: 30px;
+	margin-bottom: 75px;
 	width:40%;
 	border: 0;
 	-webkit-appearance: none;
@@ -317,9 +323,18 @@ font-family: 'Oxygen', sans-serif;
 	padding-top: 25px;
 	padding-bottom: 25px;
 }
+.new-post-content {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
 .profile-settings-content form { 
 	padding-left: 30%;
 	padding-right: 30%;
+	margin-top: 75px; 
+} 
+.new-post-content form { 
+	padding-left: 15%;
+	padding-right: 15%;
 	margin-top: 75px; 
 } 
 .form-profil img {
@@ -344,18 +359,38 @@ font-family: 'Oxygen', sans-serif;
 	padding-top: 25px;
 	padding-bottom: 0px;
 }
+.new-post-content form input[type=file] {
+	padding-top: 25px;
+	padding-bottom: 75px;
+}
+.new-post-content form input[type=text] {
+	padding: 5px;
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: 20px;
+	width: 400px;
+	height: 40px;
+	resize: none;
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.75);
+	margin-bottom: 75px;
+}
 .profile-settings-content p {
 	font-family: 'Oxygen', sans-serif; 
 	font-size: 28px;
 	margin-bottom: 25px;
 } 
-.profile-settings-content form label{ 
+.new-post-content p {
+	font-family: 'Oxygen', sans-serif; 
+	font-size: 28px;
+	margin-bottom: 25px;
+} 
+/*.profile-settings-content form label{ 
 	font-weight: bold;
 	margin-left: 15%;
 	display: block;
 	float: left;
 	font-size: 16px;
-} 
+} */
 
 .profile-settings .profile-content-title {
 	padding: 0px;
@@ -374,6 +409,9 @@ font-family: 'Oxygen', sans-serif;
 	resize: none;
 	outline: none;
 	border: 1px solid rgba(0,0,0,0.75);
+}
+.new-post-content textarea {
+	margin-bottom: 25px;
 }
 .grid-container { 
   	display: grid; 
