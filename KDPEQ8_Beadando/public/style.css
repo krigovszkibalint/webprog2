@@ -363,6 +363,14 @@ font-family: 'Oxygen', sans-serif;
 	padding-top: 25px;
 	padding-bottom: 75px;
 }
+.new-post-content form input[type=date] {
+	font-family: 'Oxygen', sans-serif; 
+	font-size: 20px;
+	border: 1px solid rgba(0,0,0,0.75);
+	height: 40px;
+	width: 300px;
+	margin-bottom: 25px;
+}
 .new-post-content form input[type=text] {
 	padding: 5px;
 	font-family: 'Ubuntu', sans-serif; 
@@ -384,14 +392,6 @@ font-family: 'Oxygen', sans-serif;
 	font-size: 28px;
 	margin-bottom: 25px;
 } 
-/*.profile-settings-content form label{ 
-	font-weight: bold;
-	margin-left: 15%;
-	display: block;
-	float: left;
-	font-size: 16px;
-} */
-
 .profile-settings .profile-content-title {
 	padding: 0px;
 	margin:0px;
@@ -411,7 +411,7 @@ font-family: 'Oxygen', sans-serif;
 	border: 1px solid rgba(0,0,0,0.75);
 }
 .new-post-content textarea {
-	margin-bottom: 25px;
+	margin-bottom: 75px;
 }
 .grid-container { 
   	display: grid; 
@@ -439,23 +439,170 @@ font-family: 'Oxygen', sans-serif;
 	color: rgba(0,0,0,0.75);
 	margin-bottom: 5px;
 }
-#photos {
+.photos {
 	margin-top: 25px;
-  /* Prevent vertical gaps */
-   
-
-  -webkit-column-count: 3;
-  -webkit-column-gap:   50px;
-  -moz-column-count:    3;
-  -moz-column-gap:      50px;
-  column-count:         3;
-  column-gap:           50px;  
+     display: grid;
+  grid-template-columns: 31.5% 31.5% 31.5%;
+  grid-gap: 50px;
+  background-color: rgba(0,0,0,0);
 }
-#photos img {
+.photos img {
 	box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
 	border-radius: 3px;
-	margin-bottom: 50px;
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
+	width: 1920px;
+	height: 1080px;
+	width: 100% !important;
+	height: auto !important;
+}
+
+#random {
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#random:hover {opacity: 0.8;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 25px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+	border:0;
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 675px;
+/*  max-width: 1280px;
+  max-height: 720px;*/
+}
+.modal-content img {
+	border-radius: 25px !important;
+}
+.modal-header {
+	background-color: white;
+	width: 100%;
+	height: 50px;
+	border: 0;
+	font-family: 'Oxygen', sans-serif;
+}
+.modal-header b{
+	font-size: 18px;
+}
+.modal-header-content {
+	font-color: rgba(0,0,0,0.75); 
+	display: inline;
+}
+.modal-footer {
+	background-color: white;
+	width: 100%;
+	height: 150px;
+	border: 0;
+	font-family: 'Oxygen', sans-serif; 
+}
+.modal-footer b{
+	float: left;
+	font-size: 24px;
+}
+.modal-footer-content {
+	font-color: rgba(0,0,0,0.75); 
+	display: inline;
+}
+.modal-container {
+	 margin: auto;
+	width: 1200px;
+}
+/* Caption of Modal Image */
+#caption {
+	padding-right: 100px;
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: 18px;
+	margin-top: 10px;
+  width: 100%;
+  max-width: 1200px;
+  float: left;
+  text-align: left;
+  height: 80px;
+}
+#upload-date {
+	bottom: 45px;
+	right: 375px;
+	position: absolute;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+#title {
+	/*z-index: 10;*/
+	/*display: none;*/
+}
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+	opacity: .9;
+	position: absolute;
+	top: 30px;
+	right: 375px;
+	color: rgba(0,0,0,0.75);
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+	opacity: 1;
+  color: rgba(0,0,0,1);
+  text-decoration: none;
+  cursor: pointer;
+}
+.delete {
+	opacity: .9;
+	position: absolute;
+	bottom: 135px;
+	right: 375px;
+	color: rgba(0,0,0,0.75);
+	font-size: 24px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+.delete:hover,
+.delete:focus {
+	opacity: 1;
+  color: rgba(0,0,0,1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }

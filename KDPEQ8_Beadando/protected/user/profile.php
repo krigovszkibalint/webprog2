@@ -9,11 +9,6 @@
 		$user['cover'] = "default-cover.png";
 	}
 ?>
-<?php
-$query = "SELECT id, image, title, description, uploaded_by FROM posts WHERE uploaded_by = ".$_SESSION['uid'];
-require_once DATABASE_CONTROLLER; 
-$user_posts = getList($query);
-?>
 <div class="profile-cover" style="background-image: url(<?=PUBLIC_DIR."img/".$user['cover'] ?>)"> 
 	<div class="profile-cover-content"> 
 		<div class="grid-container"> 
@@ -35,29 +30,74 @@ $user_posts = getList($query);
 		</div> 
 	</div> 
 </div>
+<?php
+$query = "SELECT id, image, title, description, upload_date, uploaded_by FROM posts WHERE uploaded_by = ".$_SESSION['uid']." ORDER BY upload_date DESC";
+require_once DATABASE_CONTROLLER; 
+$user_posts = getList($query);
+?>
+<?php
+$query = "SELECT COUNT(`image`) FROM posts WHERE uploaded_by = ".$_SESSION['uid'];
+require_once DATABASE_CONTROLLER; 
+$posts_number = getField($query);
+?>
 <div class="profile-content">
 	<div class="profile-content-title">
 	<h2>Bejegyzések</h2>
 	</div>
-	<section id="photos">
-				<?php foreach ($user_posts as $up) : ?>
-					<img src="<?= PUBLIC_DIR."posts/".$up['image'] ?>">
-				<?php endforeach;?>
-<!-- 		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>">
-		<img src="<?= PUBLIC_DIR."img/image-1.jpg" ?>"> -->
-	</section>
+	<div class="photos">
+	<?php $i=0;?>
+		<?php foreach ($user_posts as $up) : ?>
+			<?php $i++; ?>
+			<div id="random">
+				<img id="<?="myImg".$i ?>" src="<?= PUBLIC_DIR."posts/".$up['image'] ?>" alt="<?=$up['description']?>"
+					 title="<?=$up['title']?>" name="<?=$up['upload_date']?>">
+			</div>
+
+			<div id="myModal" class="modal">
+				<div class="modal-container">	
+					<div class="modal-header">
+						<div class="modal-header-content">
+							<b><?=$user['username']?></b>
+							<span class="close">&times;</span>
+						</div>
+					</div>
+					<img class="modal-content" id="img">
+					<div class="modal-footer">
+						<div class="modal-footer-content">
+							<b><div id="title"></div></b>
+							<?php if ($_SESSION['uid'] == $up['uploaded_by']) : ?>
+								<div class="delete"><span class="glyphicon glyphicon-trash"></span></div>
+							<?php endif;?>
+						</div>
+						<div id="caption"></div>
+						<div id="upload-date"></div>
+					</div>
+				</div>
+			</div>
+			<script>
+				var posts_number = <?php echo $posts_number; ?>;
+				for (var i = 1; i <= posts_number; i++) {
+					var index = <?php echo($i); ?>;
+					var img = document.getElementById("myImg"+index);
+				}
+				var modal = document.getElementById("myModal");
+				var modalImg = document.getElementById("img");
+				var titleText = document.getElementById("title");
+				var captionText = document.getElementById("caption");
+				var dateText = document.getElementById("upload-date");
+				img.onclick = function(){
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					captionText.innerHTML = this.alt;
+					titleText.innerHTML = this.title;
+					dateText.innerHTML = this.name;
+				}
+				var span = document.getElementsByClassName("close")[0];
+				span.onclick = function() { 
+					modal.style.display = "none";
+				}
+			</script>
+		<?php endforeach;?>
+
+	</div>
 </div>

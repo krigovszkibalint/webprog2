@@ -119,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload-bio'])) {
 			<center><p>Bemutatkozás</p></center>
 			<center>
 				<div class="form-bio">
-					<textarea id="bio" name="bio" maxlength="170" placeholder="<?=$user['bio']?>"></textarea>
+					<textarea id="bio" name="bio" maxlength="210" placeholder="<?=$user['bio']?>"></textarea>
 				</div>
 			</center>
 			<center><button type="submit" class="bio-btn" name="upload-bio">Bemutatkozás frissítése</button></center>
