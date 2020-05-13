@@ -34,8 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload-post'])) {
 	    ];
 	    require_once DATABASE_CONTROLLER; 
 	    executeDML($query, $params);
-
-		// header('Location: index.php?P=profile');
 	    move_uploaded_file($_FILES['file']['tmp_name'],$target_dir.$name);
 	}
 }
@@ -54,6 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload-post'])) {
 				<div class="form-cover">
 					<img id="blah" src="<?= PUBLIC_DIR."img/image-placeholder.png"?>">
 				</div>
+				<center><h4>Méret: 1920x1080</h4></center>
 				<input type="file" class="input-file" id="file" name="file">
 			</center>
 

@@ -40,15 +40,18 @@ $query = "SELECT COUNT(`image`) FROM posts WHERE uploaded_by = ".$_SESSION['uid'
 require_once DATABASE_CONTROLLER; 
 $posts_number = getField($query);
 ?>
+<?php if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1) : ?>
 <div class="profile-content">
 	<div class="profile-content-title">
+	
 	<h2>Bejegyzések</h2>
+	
 	</div>
 	<div class="photos">
 	<?php $i=0;?>
 		<?php foreach ($user_posts as $up) : ?>
 			<?php $i++; ?>
-			<div id="random">
+			<div id="post-image">
 				<img id="<?="myImg".$i ?>" src="<?= PUBLIC_DIR."posts/".$up['image'] ?>" alt="<?=$up['description']?>"
 					 title="<?=$up['title']?>" name="<?=$up['upload_date']?>">
 			</div>
@@ -101,3 +104,4 @@ $posts_number = getField($query);
 
 	</div>
 </div>
+<?php endif; ?>

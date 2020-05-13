@@ -92,13 +92,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload-bio'])) {
 	<h2>Profil szerkesztése</h2>
 	</div>
 	<div class="profile-settings-content">
-
+	<?php if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1) : ?>
 		<form method="post" enctype="multipart/form-data">
 			<center><p>Profilkép</p></center>
 			<center>
 				<div class="form-profil">
 					<img src="<?= PUBLIC_DIR."img/".$user['profile'] ?>">
 				</div>
+				<center><h4>Javasolt képarány: 1:1</h4></center>
 				<input type="file" class="input-file" id="file" name="file">
 			</center>
 			<center><button type="submit" class="upload-btn" name="upload-profile">Profilkép feltöltése</button></center>
@@ -124,7 +125,31 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload-bio'])) {
 			</center>
 			<center><button type="submit" class="bio-btn" name="upload-bio">Bemutatkozás frissítése</button></center>
 		</form>
-		
+	<?php endif; ?>
+	<?php if(isset($_SESSION['permission']) && $_SESSION['permission'] == 2) : ?>
+		<form method="post" enctype="multipart/form-data">
+			<center><p>Profilkép</p></center>
+			<center>
+				<div class="form-profil">
+					<img src="<?= PUBLIC_DIR."img/".$user['profile'] ?>">
+				</div>
+				<center><h4>Javasolt képarány: 1:1</h4></center>
+				<input type="file" class="input-file" id="file" name="file">
+			</center>
+			<center><button type="submit" class="upload-btn" name="upload-profile">Profilkép feltöltése</button></center>
+		</form>
+
+		<form method="post" enctype="multipart/form-data">
+			<center><p>Borítókép</p></center>
+			<center>
+				<div class="form-cover">
+					<img src="<?= PUBLIC_DIR."img/".$user['cover'] ?>">
+				</div>
+				<input type="file" class="input-file" id="file" name="file">
+			</center>
+			<center><button type="submit" class="upload-btn" name="upload-cover">Borítókép feltöltése</button></center>
+		</form>
+	<?php endif; ?>
 	</div>
 	</div>
 </div>
