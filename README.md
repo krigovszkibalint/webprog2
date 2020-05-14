@@ -1,4 +1,4 @@
-# Webprogramozás2 Beadandó - Photoblog
+# Webprog2 Beadandó - Photoblog
 
 ## Jogosultságok
 * Admin
@@ -31,6 +31,21 @@
 * Admin felület
 ## Adatbázis táblák
 * Felhasználók
+  * id
+  * username
+  * email
+  * password
+  * profile
+  * cover
+  * bio
 * Képek
+ * id
+ * image
+ * uploaded_by
 * Bejegyzések
-  
+  * id
+  * image
+  * title
+  * description
+  * upload_date
+  * uploaded_by
