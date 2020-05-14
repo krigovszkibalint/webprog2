@@ -39,9 +39,9 @@
   * cover
   * bio
 * Képek
- * id
- * image
- * uploaded_by
+  * id
+  * image
+  * uploaded_by
 * Bejegyzések
   * id
   * image
