@@ -62,3 +62,14 @@
 * Bejegyzések
   * Bejegyzések megjelenítése adott szűrők alapján
   * Bejegyzések kategóriákba rendezése (grafika, fotográfia, stb...)
+
+## Felhasználók tesztelés céljából
+* Admin
+  * E-mail cím: adminteszt@gmail.com
+  * Jelszó: password
+* Felhasználó
+  * E-mail cím: krigovszki.balint@gmail.com
+  * Jelszó: kdpeq8
+* Nincs jogosultság
+  * E-mail cím: tesztelek@gmail.com
+  * Jelszó: tesztelek
