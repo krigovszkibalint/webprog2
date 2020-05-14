@@ -2,65 +2,34 @@
 	$query = "SELECT id, username, email, profile, cover, bio FROM users WHERE id = ".$_SESSION['uid']; 
 	require_once DATABASE_CONTROLLER; 
 	$user = getRecord($query); 
-	if (empty($user['profile'])) {
-		$user['profile'] = "default-profile.png";
-	}
-	if (empty($user['cover'])) {
-		$user['cover'] = "default-cover.png";
-	}
 ?>
 <?php
-	$query = "SELECT id, image, title, description, upload_date, uploaded_by FROM posts WHERE uploaded_by = ".$_SESSION['uid']." ORDER BY upload_date DESC";
+	$query = "SELECT id, image, title, description, upload_date, uploaded_by FROM posts ORDER BY upload_date DESC";
 	require_once DATABASE_CONTROLLER; 
 	$user_posts = getList($query);
 ?>
 <?php
-	$query = "SELECT COUNT(`image`) FROM posts WHERE uploaded_by = ".$_SESSION['uid'];
+	$query = "SELECT COUNT(`image`) FROM posts";
 	require_once DATABASE_CONTROLLER; 
 	$posts_number = getField($query);
 ?>
-<div class="profile-cover" style="background-image: url(<?=PUBLIC_DIR."img/".$user['cover'] ?>)"> 
-	<div class="profile-cover-content"> 
-		<div class="grid-container"> 
-		  <div class="profile-cover-user-container"> 
-		    <div class="profile-cover-user"> 
-		    	<h2><?=$user['username']?></h2> 
-		    </div> 
-		    <div class="profile-cover-userbio"> 
-		    	<p> 
-			    	<justify> 
-			    	<?=$user['bio']?>
-			    	</justify>
-		    	</p> 
-		    </div> 
-		  </div> 
-		  <div class="profile-cover-content-img"> 
-		  	<img src="<?= PUBLIC_DIR."img/".$user['profile'] ?>"> 
-		  </div> 
-		</div> 
-	</div> 
-</div>
-
-<?php if(isset($_SESSION['permission']) && $_SESSION['permission'] == 1) : ?>
-<div class="profile-content">
-	<div class="profile-content-title">
-	
-	<h2>Bejegyzések</h2>
-	
+<div class="explore-content">
+	<div class="explore-content-title">
+		<h2>Legújabb bejegyzések</h2>
 	</div>
-	<div class="photos">
-	<?php $i=0;?>
+	<div class="explore-photos">
+		<?php $i=0;?>
 		<?php foreach ($user_posts as $up) : ?>
 			<?php $i++; ?>
 			<div id="post-image">
 				<img id="<?="myImg".$i ?>" src="<?= PUBLIC_DIR."posts/".$up['image'] ?>" alt="<?=$up['description']?>"
 					 title="<?=$up['title']?>" name="<?=$up['upload_date']?>">
 			</div>
-
 			<div id="myModal" class="modal">
 				<div class="modal-container">	
 					<div class="modal-header">
 						<div class="modal-header-content">
+							<!-- a jelenleg bejelentkezett felhasználót írja ki, mert nem tudtam rájönni, hogyan írja ki azt aki feltöltötte a képet -->
 							<b><?=$user['username']?></b>
 							<span class="close">&times;</span>
 						</div>
@@ -69,7 +38,7 @@
 					<div class="modal-footer">
 						<div class="modal-footer-content">
 							<b><div id="title"></div></b>
-							<?php if ($_SESSION['uid'] == $up['uploaded_by']) : ?>
+							<?php if ($_SESSION['uid'] == $up['uploaded_by'] || $_SESSION['permission'] == 2) : ?>
 								<!-- <a href="<?= PROTECTED_DIR."user/delete.php"?>"> -->
 									<div class="delete"><span class="glyphicon glyphicon-trash"></span></div>
 								<!-- </a> -->
@@ -103,8 +72,6 @@
 					modal.style.display = "none";
 				}
 			</script>
-		<?php endforeach;?>
-
+		<?php endforeach; ?>
 	</div>
 </div>
-<?php endif; ?>

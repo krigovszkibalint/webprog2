@@ -4,7 +4,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     'email' => $_POST['email'],
     'password' => $_POST['password']
   ];
-
   if(empty($postData['email']) || empty($postData['password'])) {
     echo "Hiányzó adat(ok)!";
   } else if (!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
@@ -12,7 +11,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
   } else if(!UserLogin($postData['email'], $postData['password'])) {
     echo "Hibás email cím vagy jelszó!";
   }
-
   $postData['password'] = "";
 }
 ?>

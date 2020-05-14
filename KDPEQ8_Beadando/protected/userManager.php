@@ -55,5 +55,4 @@ function UserRegister($email, $password, $uname) {
 	} 
 	return false;
 }
-
 ?>
