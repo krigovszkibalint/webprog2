@@ -54,7 +54,7 @@
   * Felhasználókkal való kommunikáció
   * Felhasználó profiljának megtekintése
   * Felhasználó zárolása
-  * Felhasználó bejegyzéseinke módosítása, törlése
+  * Felhasználó bejegyzéseinek módosítása, törlése
 * Felhasználó
   * Kommunikáció felhasználók között
   * Bejegyzések módosítása, törlése
