@@ -49,3 +49,16 @@
   * description
   * upload_date
   * uploaded_by
+## Továbbfejlesztési lehetőségek
+* Admin
+  * Felhasználókkal való kommunikáció
+  * Felhasználó profiljának megtekintése
+  * Felhasználó zárolása
+  * Felhasználó bejegyzéseinke módosítása, törlése
+* Felhasználó
+  * Kommunikáció felhasználók között
+  * Bejegyzések módosítása, törlése
+  * Más felhasználók profiljának megtekintése
+* Bejegyzések
+  * Bejegyzések megjelenítése adott szűrők alapján
+  * Bejegyzések kategóriákba rendezése (grafika, fotográfia, stb...)
