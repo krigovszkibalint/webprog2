@@ -73,3 +73,23 @@
 * Nincs jogosultság
   * E-mail cím: tesztelek@gmail.com
   * Jelszó: tesztelek
+
+## Felhasználói felület
+
+### Főoldal
+<img src="/screenshots/home.png" width="1000">
+
+### Bejelentkezés
+<img src="/screenshots/login.png" width="1000">
+
+### Bejegyzések
+<img src="/screenshots/posts.png" width="1000">
+
+### Bejegyzés megtekintése
+<img src="/screenshots/post view.png" width="1000">
+
+### Profil
+<img src="/screenshots/profile.png" width="1000">
+
+### Admin felület
+<img src="/screenshots/admin.png" width="1000">
